@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "299136851584",
+    "project_id": "streamofthoughts-7e586",
+    "storage_bucket": "streamofthoughts-7e586.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299136851584:android:e17f4996b94316cd921065",
+        "android_client_info": {
+          "package_name": "com.unravel.streamofthought"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299136851584-n93r9rhlmsf252hbjj9tdjo896fpkvt0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.unravel.streamofthought",
+            "certificate_hash": "f13174fad264bc18f4372b2c446ba9af407a7296"
+          }
+        },
+        {
+          "client_id": "299136851584-jg8g3qid1oljdoge49mgdmvkbsm6i00n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlyjJuSW-PBahP1II5ujKIeb5xXtpNk_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299136851584-jg8g3qid1oljdoge49mgdmvkbsm6i00n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
