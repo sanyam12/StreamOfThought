@@ -13,4 +13,10 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="switch_theme" parent="Widget.MaterialComponents.CompoundButton.Switch">
+        <item name="thumbTint">@color/switch_color</item>
+    </style>
+
+
 </resources>

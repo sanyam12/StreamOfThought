@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Switch
 import com.unravel.streamofthought.R
 import androidx.appcompat.app.AppCompatActivity
 
@@ -29,6 +30,12 @@ class ProfileFragment : Fragment() {
     override fun onStop() {
         super.onStop()
         (activity as AppCompatActivity).supportActionBar!!.show()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val switch: Switch = view.findViewById(R.id.switch1)
+
     }
 
 }
