@@ -3,12 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/HP/AndroidStudioProjects/StreamOfThought/app/src/main/res/layout/activity_main.xml" value="0.11322463768115942" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/StreamOfThought/app/src/main/res/layout/splashscreen.xml" value="0.1796875" />
         <entry key="app/src/main/res/drawable/round50.xml" value="0.31145833333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.2875905797101449" />
         <entry key="app/src/main/res/layout/signup.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/splashscreen.xml" value="0.2953125" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.2953125" />
       </map>
     </option>
