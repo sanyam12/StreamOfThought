@@ -11,6 +11,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
@@ -20,8 +21,12 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.unravel.streamofthought.R
+import com.unravel.streamofthought.databinding.FragmentMemeBinding
 
 class MemeFragment : Fragment() {
+    private lateinit var memeFragmentViewModel: MemeFragmentViewModel
+    private var _binding: FragmentMemeBinding? = null
+    private val binding get() = _binding!!
     var currentImageUrl: String? = null
 
     override fun onCreateView(
@@ -29,12 +34,18 @@ class MemeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_meme, container, false)
+        memeFragmentViewModel =
+            ViewModelProvider(this).get(MemeFragmentViewModel::class.java)
+
+        _binding = FragmentMemeBinding.inflate(inflater, container, false)
+        val root: View = binding.root
+
+        return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loadMeme()
+        loadMeme(view)
 
         val shareBt: Button = view.findViewById(R.id.shareButton)
         shareBt.setOnClickListener{shareMeme(it)}
@@ -43,9 +54,9 @@ class MemeFragment : Fragment() {
         nextBt.setOnClickListener{nextMeme(it)}
     }
 
-    private fun loadMeme() {
+    private fun loadMeme(view: android.view.View) {
         // Instantiate the RequestQueue.
-        val progressBar = requireView().findViewById<ProgressBar>(R.id.progressBar)
+        val progressBar = view.findViewById<ProgressBar>(R.id.progressBar)
         progressBar.visibility = View.VISIBLE
         val queue = Volley.newRequestQueue(activity)
         currentImageUrl = "https://meme-api.herokuapp.com/gimme"
@@ -96,7 +107,7 @@ class MemeFragment : Fragment() {
         startActivity(chooser)
     }
     private fun nextMeme(view: android.view.View) {
-        loadMeme()
+        loadMeme(view)
     }
 
 }

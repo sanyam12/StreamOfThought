@@ -12,7 +12,9 @@ import android.content.Context
 import android.content.Intent
 import android.view.ContextThemeWrapper
 import android.widget.Button
+import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.unravel.streamofthought.SignIn
 
 
@@ -40,6 +42,21 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val store: FirebaseFirestore = FirebaseFirestore.getInstance()
+        val mauth: FirebaseAuth = FirebaseAuth.getInstance()
+        val uid = mauth.currentUser!!.uid.toString()
+        if(mauth.currentUser!=null)
+        {
+            store.collection("desc").document(uid).get()
+                .addOnSuccessListener {
+                    val name: TextView = view.findViewById(R.id.textView)
+                    val mail: TextView = view.findViewById(R.id.textView6)
+                    val fullName: String =  it.get("first").toString() + " " + it.get("last").toString()
+                    name.text = fullName
+                    mail.text = it.get("mail").toString()
+                }
+        }
+
         val switch: Switch = view.findViewById(R.id.switch1)
         switch.setOnClickListener{
 
