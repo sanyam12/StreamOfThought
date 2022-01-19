@@ -9,7 +9,7 @@
         android:id="@+id/imageButton"
         android:layout_width="56dp"
         android:layout_height="40dp"
-        android:background="null"
+        android:background="@color/orange"
         android:outlineSpotShadowColor="@color/orange"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
