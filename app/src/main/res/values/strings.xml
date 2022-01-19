@@ -9,4 +9,6 @@
     <string name="followers">Followers: -</string>
     <string name="anon">Do you want your name to be hidden?</string>
     <string name="default_followers">0</string>
+    <string name="share">Share</string>
+    <string name="next">Next</string>
 </resources>
