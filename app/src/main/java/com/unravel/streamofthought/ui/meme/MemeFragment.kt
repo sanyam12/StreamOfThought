@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.Toast
@@ -34,6 +35,12 @@ class MemeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loadMeme()
+
+        val shareBt: Button = view.findViewById(R.id.shareButton)
+        shareBt.setOnClickListener{shareMeme(it)}
+
+        val nextBt: Button = view.findViewById(R.id.nextButton)
+        nextBt.setOnClickListener{nextMeme(it)}
     }
 
     private fun loadMeme() {
@@ -81,14 +88,14 @@ class MemeFragment : Fragment() {
         queue.add(JsonObjectRequest)
     }
 
-    fun shareMeme(view: android.view.View) {
+    private fun shareMeme(view: android.view.View) {
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "text/plain"
         intent.putExtra(Intent.EXTRA_TEXT, "Hey, check this out $currentImageUrl")
         val chooser = Intent.createChooser(intent, "Share thi meme using...")
         startActivity(chooser)
     }
-    fun nextMeme(view: android.view.View) {
+    private fun nextMeme(view: android.view.View) {
         loadMeme()
     }
 

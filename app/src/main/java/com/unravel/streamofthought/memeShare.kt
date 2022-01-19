@@ -74,14 +74,14 @@ class memeShare : AppCompatActivity() {
         queue.add(JsonObjectRequest)
     }
 
-    fun shareMeme(view: android.view.View) {
+    private fun shareMeme(view: android.view.View) {
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "text/plain"
         intent.putExtra(Intent.EXTRA_TEXT, "Hey, check this out $currentImageUrl")
         val chooser = Intent.createChooser(intent, "Share thi meme using...")
         startActivity(chooser)
     }
-    fun nextMeme(view: android.view.View) {
+    private fun nextMeme(view: android.view.View) {
         loadMeme()
     }
 }
