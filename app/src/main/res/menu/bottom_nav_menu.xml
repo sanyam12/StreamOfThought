@@ -15,8 +15,19 @@
 <!--        android:id="@+id/navigation_notifications"-->
 <!--        android:icon="@drawable/ic_notifications_black_24dp"-->
 <!--        android:title="@string/title_notifications" />-->
+
+    <item
+        android:id="@+id/memeFragment"
+        android:icon="@drawable/back"
+        android:title="Memes"/>
+
     <item
         android:id="@+id/profileFragment"
         android:icon="@drawable/ic_launcher_background"
         android:title="@string/title_profile" />
+
+    <item
+        android:id="@+id/memeShare"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="meme"/>
 </menu>

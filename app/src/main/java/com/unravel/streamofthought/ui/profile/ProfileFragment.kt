@@ -8,8 +8,12 @@ import android.view.ViewGroup
 import android.widget.Switch
 import com.unravel.streamofthought.R
 import androidx.appcompat.app.AppCompatActivity
-
-
+import android.content.Context
+import android.content.Intent
+import android.view.ContextThemeWrapper
+import android.widget.Button
+import com.google.firebase.auth.FirebaseAuth
+import com.unravel.streamofthought.SignIn
 
 
 class ProfileFragment : Fragment() {
@@ -19,7 +23,9 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        val contextThemeWrapper: Context = ContextThemeWrapper(activity, R.style.splash)
+        val localInflator: LayoutInflater = inflater.cloneInContext(contextThemeWrapper)
+        return localInflator.inflate(R.layout.fragment_profile, container, false)
     }
 
     override fun onResume() {
@@ -35,7 +41,18 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val switch: Switch = view.findViewById(R.id.switch1)
+        switch.setOnClickListener{
 
+        }
+
+        val logOut: Button = view.findViewById(R.id.button2)
+        logOut.setOnClickListener{
+            FirebaseAuth.getInstance().signOut()
+
+            val intent = Intent(activity, SignIn::class.java)
+            intent.putExtra("bool", "true")
+            startActivity(intent)
+        }
     }
 
 }

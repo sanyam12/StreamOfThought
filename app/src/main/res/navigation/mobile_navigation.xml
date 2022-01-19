@@ -27,4 +27,14 @@
         android:name="com.unravel.streamofthought.ui.profile.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/memeFragment"
+        android:name="com.unravel.streamofthought.ui.meme.MemeFragment"
+        android:label="Memes"
+        tools:layout="@layout/fragment_meme" />
+    <activity
+        android:id="@+id/memeShare"
+        android:name="com.unravel.streamofthought.memeShare"
+        android:label="activity_meme_share"
+        tools:layout="@layout/activity_meme_share" />
 </navigation>

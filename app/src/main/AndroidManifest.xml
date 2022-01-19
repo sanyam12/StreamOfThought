@@ -23,8 +23,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"/>
         <activity android:name=".test" />
+        <activity android:name=".SignUp"
+            android:theme="@style/splash"/>
+        <activity android:name=".SignIn"
+            android:theme="@style/splash"/>
+        <activity android:name=".Details"
+            android:theme="@style/splash"/>
     </application>
 
 </manifest>
