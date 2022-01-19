@@ -30,7 +30,6 @@ class SignUp:AppCompatActivity() {
         val signupbt: Button = findViewById(R.id.button)
         val enterMail: EditText = findViewById(R.id.editMail)
         val enterPass: EditText = findViewById(R.id.editPassword)
-        val repPass: EditText = findViewById(R.id.editrepPassword)
 
         signupbt.setOnClickListener {
             when {
@@ -47,14 +46,6 @@ class SignUp:AppCompatActivity() {
                     Toast.makeText(
                         this,
                         "Please enter a password",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-
-                !(TextUtils.equals(enterPass.text.toString(), repPass.text.toString())) -> {
-                    Toast.makeText(
-                        this,
-                        "Passwords do not match",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
