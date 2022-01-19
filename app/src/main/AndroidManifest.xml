@@ -10,8 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StreamOfThought">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.slideshow.splashscreen"
             android:exported="true"
+            android:theme="@style/splash"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,6 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".test"/>
     </application>
 
 </manifest>
