@@ -32,4 +32,10 @@
        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
    </style>
 
+    <style name="card" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="background">@color/black</item>
+        <item name="backgroundColor">@color/black</item>
+        <item name="colorOnPrimary">@color/black</item>
+    </style>
+
 </resources>

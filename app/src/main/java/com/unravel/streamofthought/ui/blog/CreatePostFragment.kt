@@ -66,8 +66,7 @@ class CreatePostFragment : Fragment() {
                                                 store.collection("post").document("number").update(a as Map<String, Any>)
                                                 Toast.makeText(activity, "Firestore Updated", Toast.LENGTH_SHORT).show()
                                                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-                                                transaction.replace(R.id.create_frame, BlogFragment())
-                                                transaction.addToBackStack(null)
+                                                transaction.replace(R.id.main, BlogFragment())
                                                 transaction.commit()
                                             }
                                             .addOnFailureListener{
