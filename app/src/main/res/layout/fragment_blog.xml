@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.blog.BlogFragment"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:paddingBottom="55dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
@@ -14,9 +15,9 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-            android:layout_width="390dp"
-            android:layout_marginStart="10dp"
-            android:layout_height="672dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +34,7 @@
             app:layout_constraintHorizontal_bias="0.954"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.909" />
+            app:layout_constraintVertical_bias="0.974" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
