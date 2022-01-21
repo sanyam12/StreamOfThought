@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/home"
         android:title="@string/title_home" />
 
 <!--    <item-->
@@ -17,15 +17,15 @@
 <!--        android:title="@string/title_notifications" />-->
     <item
         android:id="@+id/memeFragment"
-        android:icon="@drawable/lol"
+        android:icon="@drawable/meme"
         android:title="Memes"/>
     <item
         android:id="@+id/blogFragment"
-        android:icon="@drawable/back"
+        android:icon="@drawable/write"
         android:title="Blog"/>
     <item
         android:id="@+id/profileFragment"
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/profilenew"
         android:title="@string/title_profile" />
 
 
