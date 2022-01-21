@@ -17,7 +17,7 @@
 <!--        android:title="@string/title_notifications" />-->
     <item
         android:id="@+id/memeFragment"
-        android:icon="@drawable/lol"
+        android:icon="@drawable/meme"
         android:title="Memes"/>
     <item
         android:id="@+id/blogFragment"
@@ -25,7 +25,7 @@
         android:title="Blog"/>
     <item
         android:id="@+id/profileFragment"
-        android:icon="@drawable/ic_launcher_background"
+        android:icon="@drawable/profilenew"
         android:title="@string/title_profile" />
 
     <item
