@@ -38,4 +38,10 @@
         <item name="colorOnPrimary">@color/black</item>
     </style>
 
+    <style name="fab" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorSecondary">@color/orange</item>
+        <item name="colorSecondaryVariant">@color/orange</item>
+        <item name="android:colorBackgroundFloating">@color/orange</item>
+    </style>
+
 </resources>

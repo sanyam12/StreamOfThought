@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -17,6 +18,7 @@ class BlogAdapter(private val posts: ArrayList<PostDB>, private val context: Con
         val likes: TextView = view.findViewById(R.id.likeCount)
         val title: TextView = view.findViewById(R.id.postTitle)
         val likeBt: ImageView = view.findViewById(R.id.likeButton)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
@@ -32,10 +34,12 @@ class BlogAdapter(private val posts: ArrayList<PostDB>, private val context: Con
         holder.title.text = curr_post.text
 
         val mauth = FirebaseAuth.getInstance()
+        val uid = mauth.currentUser!!.uid
         val store = FirebaseFirestore.getInstance()
-        store.collection("likes").document("uid").get()
+        val i: String= curr_post.i
+        store.collection("likes").document(uid).get()
             .addOnSuccessListener {
-                val i: String= curr_post.i
+
                 if(it.get(i)=="true")
                 {
                     holder.likeBt.setImageResource(R.drawable.ic_liked)
@@ -45,7 +49,19 @@ class BlogAdapter(private val posts: ArrayList<PostDB>, private val context: Con
                 }
             }
         holder.likeBt.setOnClickListener{
-
+            store.collection("likes").document(uid).get()
+                .addOnSuccessListener {
+                    if(it.get(i)=="false")
+                    {
+                        val up: HashMap<String, Any> = hashMapOf()
+                        up[i]=1
+                        store.collection("likes").document(uid).update(up)
+                        holder.likeBt.setImageResource(R.drawable.ic_liked)
+                    }
+                }
+                .addOnFailureListener{
+                    Toast.makeText(context, "this is wrong", Toast.LENGTH_SHORT).show()
+                }
         }
 
     }

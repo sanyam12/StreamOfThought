@@ -36,7 +36,14 @@
         android:id="@+id/blogFragment"
         android:name="com.unravel.streamofthought.ui.blog.BlogFragment"
         android:label="Blog"
-        tools:layout="@layout/fragment_blog" />
+        tools:layout="@layout/fragment_blog" >
+        <action
+            android:id="@+id/action_blogFragment_to_createPostFragment"
+            app:destination="@id/createPostFragment" />
+        <action
+            android:id="@+id/action_blogFragment_to_viewBlogFragment"
+            app:destination="@id/viewBlogFragment" />
+    </fragment>
     <activity
         android:id="@+id/memeShare"
         android:name="com.unravel.streamofthought.memeShare"
@@ -44,7 +51,12 @@
         tools:layout="@layout/activity_meme_share" />
     <fragment
         android:id="@+id/createPostFragment"
-        android:name="com.unravel.streamofthought.CreatePostFragment"
+        android:name="com.unravel.streamofthought.ui.blog.CreatePostFragment"
         android:label="Create Post"
         tools:layout="@layout/fragment_create_post" />
+    <fragment
+        android:id="@+id/viewBlogFragment"
+        android:name="com.unravel.streamofthought.ui.blog.ViewBlogFragment"
+        android:label="fragment_view_blog"
+        tools:layout="@layout/fragment_view_blog" />
 </navigation>
