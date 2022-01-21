@@ -36,13 +36,6 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        val cl:FragmentContainerView = findViewById(R.id.nav_host_fragment_activity_main)
-        val nav: BottomNavigationView = findViewById(R.id.nav_view)
-        val nav_p = nav.layoutParams
-        val h= cl.layoutParams
-        //h.height = h.height - nav_p.height
-        Toast.makeText(this, h.height.toString(), Toast.LENGTH_SHORT).show()
-        cl.setLayoutParams(h)
 
     }
 
