@@ -28,4 +28,9 @@
         android:icon="@drawable/ic_launcher_background"
         android:title="@string/title_profile" />
 
+    <item
+        android:id="@+id/memeShare"
+        android:icon="@drawable/back"
+        android:title="act"/>
+
 </menu>
