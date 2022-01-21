@@ -17,7 +17,7 @@
 <!--        android:title="@string/title_notifications" />-->
     <item
         android:id="@+id/memeFragment"
-        android:icon="@drawable/back"
+        android:icon="@drawable/lol"
         android:title="Memes"/>
     <item
         android:id="@+id/blogFragment"
