@@ -6,11 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.unravel.streamofthought.R
 
@@ -29,12 +31,37 @@ class BlogFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val fab: FloatingActionButton = view.findViewById(R.id.fab)
         fab.setOnClickListener{
+            fab.visibility = View.GONE
             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
             transaction.replace(R.id.create_frame, CreatePostFragment())
-            transaction.addToBackStack("try")
+            transaction.addToBackStack("create post")
             transaction.commit()
         }
 
+        val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
+        recyclerView.visibility = View.VISIBLE
+        recyclerView.layoutManager = LinearLayoutManager(view.context)
+        recyclerView.adapter
+        val list: ArrayList<PostDB> = arrayListOf()
+        val adapter: BlogAdapter = BlogAdapter(list, view.context)
+        recyclerView.adapter = adapter
+        val db = FirebaseFirestore.getInstance()
+        db.collection("post").document("postCollection").get()
+            .addOnSuccessListener {
+                val users: HashMap<String, Any> = it.data as HashMap<String, Any>
+                for( i in users.entries)
+                {
+                    val post: HashMap<String, Any> = i.value as HashMap<String, Any>
+                    for(j in post.entries)
+                    {
+                        val k = j.value as HashMap<String, Any>
+                        val item = PostDB(k["i"].toString(), k["displayName"].toString(), k["likes"].toString(), k["text"].toString(), k["uid"].toString())
+                        list.add(item)
+                        adapter.notifyDataSetChanged()
+                    }
+
+                }
+            }
 
     }
 

@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginTop="16dp">
+    android:layout_marginTop="16dp"
+    android:background="@color/black">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,6 +14,7 @@
         <ImageView
             android:layout_width="42dp"
             android:layout_height="42dp"
+            android:src="@drawable/ic_launcher_background"
             android:id="@+id/userImage"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -20,6 +22,7 @@
         <TextView
             android:id="@+id/userName"
             android:layout_width="0dp"
+            android:text="usename"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toRightOf="@id/userImage"
             app:layout_constraintRight_toRightOf="parent"
@@ -33,6 +36,7 @@
             android:id="@+id/createdAt"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:text="abc"
             app:layout_constraintLeft_toRightOf="@id/userImage"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/userName"
@@ -46,6 +50,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/userImage"
             android:id="@+id/postTitle"
+            android:text="title"
             android:textSize="16sp"
             android:layout_marginTop="12dp"
             android:textColor="#212121" />
@@ -56,12 +61,14 @@
             android:layout_height="24dp"
             app:layout_constraintLeft_toLeftOf="@id/postTitle"
             app:layout_constraintTop_toBottomOf="@id/postTitle"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_liked"/>
 
         <TextView
             android:id="@+id/likeCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="NA"
             app:layout_constraintLeft_toRightOf="@id/likeButton"
             app:layout_constraintTop_toTopOf="@id/likeButton"
             android:layout_marginLeft="6dp"

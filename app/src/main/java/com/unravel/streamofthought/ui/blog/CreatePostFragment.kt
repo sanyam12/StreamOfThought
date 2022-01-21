@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.FragmentTransaction
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
@@ -32,42 +34,51 @@ class CreatePostFragment : Fragment() {
         postBt.setOnClickListener{
             val s: String = postText.text.toString()
             val uid = mauth.currentUser!!.uid
+            if(s.isEmpty())
+                Toast.makeText(activity, "Post cannot be Empty", Toast.LENGTH_SHORT).show()
+            else
+            {
+                store.collection("desc").document(uid).get()
+                    .addOnSuccessListener {
+                        val displayName = it.get("displayName").toString()
 
-            store.collection("desc").document(uid).get()
-                .addOnSuccessListener {
-                    val displayName = it.get("displayName").toString()
+                        store.collection("post").document("number").get()
+                            .addOnSuccessListener {
+                                val i= it.get("count").toString()
 
-                    store.collection("post").document("number").get()
-                        .addOnSuccessListener {
-                            val i= it.get("count").toString()
+                                store.collection("post").document("postCollection").get()
+                                    .addOnSuccessListener {
+                                        val rest: HashMap<String, Any> = it.get(uid) as HashMap<String, Any>
+                                        val likes = 0
+                                        val map = HashMap<String, Any>()
+                                        map["likes"] = likes
+                                        map["displayName"] = displayName
+                                        map["uid"] = uid
+                                        map["text"] = s
+                                        val document = HashMap<String, Any>()
+                                        rest[i] = map
+                                        document[uid] = rest
 
-                            store.collection("post").document("postCollection").get()
-                                .addOnSuccessListener {
-                                    val rest: HashMap<String, Any> = it.get(uid) as HashMap<String, Any>
-                                    val likes = 0
-                                    val map = HashMap<String, Any>()
-                                    map["likes"] = likes
-                                    map["displayName"] = displayName
-                                    map["uid"] = uid
-                                    map["text"] = s
-                                    val document = HashMap<String, Any>()
-                                    rest[i] = map
-                                    document[uid] = rest
+                                        store.collection("post").document("postCollection").update(document)
+                                            .addOnSuccessListener {
+                                                val a = HashMap<String, Int>()
+                                                a["count"] = i.toInt()+1
+                                                store.collection("post").document("number").update(a as Map<String, Any>)
+                                                Toast.makeText(activity, "Firestore Updated", Toast.LENGTH_SHORT).show()
+                                                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                                                transaction.replace(R.id.create_frame, BlogFragment())
+                                                transaction.addToBackStack(null)
+                                                transaction.commit()
+                                            }
+                                            .addOnFailureListener{
+                                                Toast.makeText(activity, "Error here", Toast.LENGTH_SHORT).show()
+                                            }
+                                    }
+                            }
 
-                                    store.collection("post").document("postCollection").update(document)
-                                        .addOnSuccessListener {
-                                            val a = HashMap<String, Int>()
-                                            a["count"] = i.toInt()+1
-                                            store.collection("post").document("number").update(a as Map<String, Any>)
-                                            Toast.makeText(activity, "Firestore Updated", Toast.LENGTH_SHORT).show()
-                                        }
-                                        .addOnFailureListener{
-                                            Toast.makeText(activity, "Error here", Toast.LENGTH_SHORT).show()
-                                        }
-                                }
-                        }
+                    }
+            }
 
-                }
 
 
 
