@@ -26,7 +26,6 @@ class SignIn: AppCompatActivity() {
         val signinBt: Button = findViewById(R.id.button3)
         val enterMail: EditText = findViewById(R.id.signinEditMail)
         val enterPass: EditText = findViewById(R.id.signinEditPassword)
-        val bt: ImageButton = findViewById(R.id.imageButton)
 //        bt.setOnClickListener{
 //            val intent = Intent(this, login::class.java)
 //            startActivity(intent)

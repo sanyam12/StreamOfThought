@@ -56,8 +56,8 @@ class MemeFragment : Fragment() {
 
     private fun loadMeme(view: android.view.View) {
         // Instantiate the RequestQueue.
-        val progressBar = view.findViewById<ProgressBar>(R.id.progressBar)
-        progressBar.visibility = View.VISIBLE
+        //val progressBar = view.findViewById<ProgressBar>(R.id.progressBar)
+        //progressBar.visibility = View.VISIBLE
         val queue = Volley.newRequestQueue(activity)
         currentImageUrl = "https://meme-api.herokuapp.com/gimme"
 
@@ -66,31 +66,33 @@ class MemeFragment : Fragment() {
             Request.Method.GET, currentImageUrl, null,
             { response ->
                 val url = response.getString("url")
-                val memeImage = requireView().findViewById<ImageView>(R.id.memeImage)
-                Glide.with(this).load(currentImageUrl).listener(object: RequestListener<Drawable> {
-                    override fun onLoadFailed(
-                        e: GlideException?,
-                        model: Any?,
-                        target: Target<Drawable>?,
-                        isFirstResource: Boolean
-                    ): Boolean {
-                        progressBar.visibility = View.GONE
-                        return false
-                    }
+                val memeImage = view.findViewById<ImageView>(R.id.memeImage)
+                activity?.let {
+                    Glide.with(it).load(currentImageUrl).listener(object: RequestListener<Drawable> {
+                        override fun onLoadFailed(
+                            e: GlideException?,
+                            model: Any?,
+                            target: Target<Drawable>?,
+                            isFirstResource: Boolean
+                        ): Boolean {
+                            //progressBar.visibility = View.GONE
+                            return false
+                        }
 
-                    override fun onResourceReady(
-                        resource: Drawable?,
-                        model: Any?,
-                        target: Target<Drawable>?,
-                        dataSource: DataSource?,
-                        isFirstResource: Boolean
-                    ): Boolean {
-                        progressBar.visibility = View.GONE
-                        return false
-                    }
+                        override fun onResourceReady(
+                            resource: Drawable?,
+                            model: Any?,
+                            target: Target<Drawable>?,
+                            dataSource: DataSource?,
+                            isFirstResource: Boolean
+                        ): Boolean {
+                            //progressBar.visibility = View.GONE
+                            return false
+                        }
 
 
-                }).into(memeImage)
+                    }).into(memeImage)
+                }
             },
             {
                 Toast.makeText(activity, "Something went wrong", Toast.LENGTH_LONG).show()

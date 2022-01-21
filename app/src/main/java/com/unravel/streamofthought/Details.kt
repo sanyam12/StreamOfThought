@@ -42,6 +42,7 @@ class Details:AppCompatActivity() {
                     mp["displayName"] = enterDisplayName.text.toString()
                     mp["mail"] = intent.getStringExtra("email-id").toString()
                     mp["uid"] = mauth.uid.toString()
+                    mp["anon"] = "false"
 
                     val db = FirebaseFirestore.getInstance()
                     db.collection("desc").document(mauth.uid.toString()).set(mp).addOnSuccessListener {
