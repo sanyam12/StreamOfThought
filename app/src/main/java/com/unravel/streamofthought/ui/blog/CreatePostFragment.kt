@@ -48,7 +48,12 @@ class CreatePostFragment : Fragment() {
 
                                 store.collection("post").document("postCollection").get()
                                     .addOnSuccessListener {
-                                        val rest: HashMap<String, Any> = it.get(uid) as HashMap<String, Any>
+                                        var rest: HashMap<String, Any> = hashMapOf()
+                                        if(it.get(uid)!=null)
+                                        {
+                                            rest= it.get(uid) as HashMap<String, Any>
+                                        }
+
                                         val likes = 0
                                         val map = HashMap<String, Any>()
                                         map["likes"] = likes
