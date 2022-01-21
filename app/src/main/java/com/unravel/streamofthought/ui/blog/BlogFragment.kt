@@ -63,6 +63,8 @@ class BlogFragment : Fragment() {
                 }
             }
 
+
+
     }
 
 }
