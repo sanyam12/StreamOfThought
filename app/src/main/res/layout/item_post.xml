@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:background="@color/orange">
+        android:background="@color/black">
 
         <ImageView
             android:layout_width="42dp"
@@ -22,28 +22,28 @@
 
         <TextView
             android:id="@+id/userName"
-            android:layout_width="0dp"
-            android:text="username"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/userImage"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@id/userImage"
+            android:layout_width="315dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="12dp"
+            android:text="username"
+            android:textColor="@color/white"
             android:textSize="16sp"
-            android:textColor="@color/white"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/createdAt"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="@string/abc"
+            android:textStyle="bold"
             app:layout_constraintLeft_toRightOf="@id/userImage"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/userName"
-            android:layout_marginTop="4dp"
-            android:layout_marginLeft="12dp" />
+            app:layout_constraintTop_toTopOf="@id/userImage" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/createdAt"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:text="abc"-->
+<!--            app:layout_constraintLeft_toRightOf="@id/userImage"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/userName"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:layout_marginLeft="12dp" />-->
 
         <TextView
             android:layout_width="0dp"
@@ -52,7 +52,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/userImage"
             android:id="@+id/postTitle"
-            android:text="@string/title"
+            android:text="title"
             android:textSize="16sp"
             android:layout_marginTop="12dp"
             android:textColor="@color/white" />
@@ -70,7 +70,7 @@
             android:id="@+id/likeCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/na"
+            android:text="NA"
             android:textColor="@color/white"
             app:layout_constraintLeft_toRightOf="@id/likeButton"
             app:layout_constraintTop_toTopOf="@id/likeButton"
