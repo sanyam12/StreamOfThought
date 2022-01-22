@@ -51,20 +51,24 @@ class BlogFragment : Fragment() {
         val db = FirebaseFirestore.getInstance()
         db.collection("post").document("postCollection").get()
             .addOnSuccessListener {
-                val users: HashMap<String, Any> = it.data as HashMap<String, Any>
-                for( i in users.entries)
+                val a = it.data as HashMap<String, Any>
+                for(i in a.entries)
                 {
-                    val post: HashMap<String, Any> = i.value as HashMap<String, Any>
-                    for(j in post.entries)
+                    val b = a.values as HashMap<*, *>
+                    for(j in b.entries)
                     {
-                        val k = j.value as HashMap<String, Any>
-                        val item = PostDB(k["i"].toString(), k["displayName"].toString(), k["likes"].toString(), k["text"].toString(), k["uid"].toString(), k["title"].toString())
+                        val c = b.values as HashMap<*,*>
+                        val item = PostDB(c["i"].toString(), c["displayName"].toString(), c["likes"].toString().toInt(), c["text"].toString(), c["uid"].toString(), c["title"].toString())
                         list.add(item)
                         adapter.notifyDataSetChanged()
                     }
-
                 }
             }
+
+        val refersh: FloatingActionButton = view.findViewById(R.id.floatingActionButton)
+        refersh.setOnClickListener{
+            adapter.notifyDataSetChanged()
+        }
 
 
 
