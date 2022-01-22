@@ -34,7 +34,7 @@ class BlogFragment : Fragment() {
         fab.setOnClickListener{
             fab.visibility = View.GONE
             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.main, CreatePostFragment())
+            transaction.replace(R.id.blogF, CreatePostFragment())
             transaction.addToBackStack("create post")
             transaction.commit()
         }

@@ -2,6 +2,8 @@ package com.unravel.streamofthought.ui.blog
 
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,8 +14,10 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.getField
 import com.unravel.streamofthought.R
 import com.unravel.streamofthought.memeShare
 
@@ -38,44 +42,82 @@ class BlogAdapter(private val posts: ArrayList<PostDB>, private val context: Con
         holder.likes.text = curr_post.likes
         holder.title.text = curr_post.title
         
-        holder.displayName.setOnClickListener{
+        holder.title.setOnClickListener{
 //            val transaction: FragmentTransaction = manager.beginTransaction()
 //            transaction.replace(R.id.main, ViewBlogFragment())
 //            transaction.addToBackStack("view post")
 //            transaction.commit()
-            val fragment: ViewBlogFragment = ViewBlogFragment()
-            manager.beginTransaction().replace(R.id.create_frame, fragment).commit()
-            Toast.makeText(context, "temp", Toast.LENGTH_SHORT).show()
+            val bundle = Bundle()
+            bundle.putString("displayName", curr_post.displayName)
+            bundle.putString("title", curr_post.title)
+            bundle.putString("text", curr_post.text)
+            bundle.putString("likes", curr_post.likes)
+            bundle.putString("i", curr_post.i)
+            bundle.putString("uid", curr_post.uid)
+            val fragment = ViewBlogFragment()
+            fragment.setArguments(bundle)
+            manager.beginTransaction().replace(R.id.blogF, fragment).commit()
+            //Toast.makeText(context, "temp", Toast.LENGTH_SHORT).show()
         }
 
-        val mauth = FirebaseAuth.getInstance()
-        val uid = mauth.currentUser!!.uid
+        val auth = FirebaseAuth.getInstance()
         val store = FirebaseFirestore.getInstance()
-        val i: String= curr_post.i
-        store.collection("likes").document(uid).get()
+        val uid: String = auth.currentUser!!.uid
+        val i = curr_post.i
+        Toast.makeText(context,i, Toast.LENGTH_SHORT).show()
+        store.collection("likes").document("uid").get()
             .addOnSuccessListener {
-
-                if(it.get(i)=="true")
+                if(it.get(uid)==null)
                 {
-                    holder.likeBt.setImageResource(R.drawable.ic_liked)
+                    val map: HashMap<String, Any> = hashMapOf()
+                    val m: HashMap<String, Any> = hashMapOf()
+                    m[i] = "false"
+                    map[uid] = m
+                    store.collection("likes").document("uid").set(map)
+                        .addOnSuccessListener { Toast.makeText(context,"working", Toast.LENGTH_SHORT).show() }
+                    holder.likeBt.setImageResource(R.drawable.ic_unliked)
                 }else
                 {
-                    holder.likeBt.setImageResource(R.drawable.ic_unliked)
-                }
-            }
-        holder.likeBt.setOnClickListener{
-            store.collection("likes").document(uid).get()
-                .addOnSuccessListener {
-                    if(it.get(i)=="false")
+                    val map:HashMap<String, Any> = it.get(uid) as HashMap<String, Any>
+                    if(map[i]=="true")
                     {
-                        val up: HashMap<String, Any> = hashMapOf()
-                        up[i]=1
-                        store.collection("likes").document(uid).update(up)
                         holder.likeBt.setImageResource(R.drawable.ic_liked)
+                    }else
+                    {
+                        holder.likeBt.setImageResource(R.drawable.ic_unliked)
+                        if(map[i]==null)
+                        {
+                            map[i] = "false"
+                            val m = HashMap<String, Any>()
+                            m[uid] = map
+                            store.collection("likes").document("uid").update(m)
+                        }
                     }
                 }
-                .addOnFailureListener{
-                    Toast.makeText(context, "this is wrong", Toast.LENGTH_SHORT).show()
+            }
+
+        holder.likeBt.setOnClickListener{
+            store.collection("likes").document("uid").get()
+                .addOnSuccessListener {
+                    val map: HashMap<String, Any> = it.get(uid) as HashMap<String, Any>
+                    if(map[i]=="true")
+                    {
+                        map[i] = "false"
+                        val m: HashMap<String, Any> = hashMapOf()
+                        m[uid] = m
+                        store.collection("likes").document("uid").update(m)
+                        holder.likeBt.setImageResource(R.drawable.ic_unliked)
+                    }
+                    else
+                    {
+                        map[i] = "true"
+                        val m: HashMap<String, Any> = hashMapOf()
+                        m[uid] = m
+                        store.collection("likes").document("uid").update(m)
+                        holder.likeBt.setImageResource(R.drawable.ic_liked)
+                    }
+
+
                 }
         }
 

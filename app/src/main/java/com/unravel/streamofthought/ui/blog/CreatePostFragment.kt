@@ -53,13 +53,15 @@ class CreatePostFragment : Fragment() {
                                         {
                                             rest= it.get(uid) as HashMap<String, Any>
                                         }
-
+                                        val titleEdit: EditText = view.findViewById(R.id.editTextTextPersonName4)
                                         val likes = 0
                                         val map = HashMap<String, Any>()
                                         map["likes"] = likes
                                         map["displayName"] = displayName
                                         map["uid"] = uid
                                         map["text"] = s
+                                        map["i"] = i
+                                        map["title"] = titleEdit.text.toString()
                                         val document = HashMap<String, Any>()
                                         rest[i] = map
                                         document[uid] = rest
@@ -71,7 +73,7 @@ class CreatePostFragment : Fragment() {
                                                 store.collection("post").document("number").update(a as Map<String, Any>)
                                                 Toast.makeText(activity, "Firestore Updated", Toast.LENGTH_SHORT).show()
                                                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-                                                transaction.replace(R.id.main, BlogFragment())
+                                                transaction.replace(R.id.blogF, BlogFragment())
                                                 transaction.commit()
                                             }
                                             .addOnFailureListener{
