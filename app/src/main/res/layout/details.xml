@@ -9,7 +9,7 @@
         android:id="@+id/textView12"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
-        android:text="@string/stream_of_thoughts"
+        android:text="Barefoot_LIfe"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="40sp"
