@@ -11,4 +11,12 @@
     <string name="default_followers">0</string>
     <string name="what_do_you_want_to_talk_about">What do you want to talk about?</string>
     <string name="post">POST</string>
+    <string name="na">NA</string>
+    <string name="title">title</string>
+    <string name="abc">abc</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="display_name">Display Name</string>
+    <string name="save">Save</string>
+    <string name="stream_of_thoughts">Stream of Thoughts</string>
 </resources>

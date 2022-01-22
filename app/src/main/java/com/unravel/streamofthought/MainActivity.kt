@@ -1,5 +1,6 @@
 package com.unravel.streamofthought
 
+
 import android.os.Bundle
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -12,8 +13,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.unravel.streamofthought.databinding.ActivityMainBinding
 import android.app.UiModeManager
-
-
+import androidx.appcompat.app.ActionBar
 
 
 class MainActivity : AppCompatActivity() {

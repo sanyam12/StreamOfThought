@@ -19,7 +19,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.getField
 import com.unravel.streamofthought.R
-import com.unravel.streamofthought.memeShare
 
 class BlogAdapter(private val posts: ArrayList<PostDB>, private val context: Context, private val manager: FragmentManager): RecyclerView.Adapter<BlogAdapter.PostViewHolder>() {
     inner class PostViewHolder(view: View):RecyclerView.ViewHolder(view) {
