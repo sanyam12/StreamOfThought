@@ -54,10 +54,10 @@ class BlogFragment : Fragment() {
                 val a = it.data as HashMap<String, Any>
                 for(i in a.entries)
                 {
-                    val b = a.values as HashMap<*, *>
-                    for(j in b.entries)
+                    val b = i.value as MutableMap<*, *>
+                    for(j in b)
                     {
-                        val c = b.values as HashMap<*,*>
+                        val c = j.value as MutableMap<*,*>
                         val item = PostDB(c["i"].toString(), c["displayName"].toString(), c["likes"].toString().toInt(), c["text"].toString(), c["uid"].toString(), c["title"].toString())
                         list.add(item)
                         adapter.notifyDataSetChanged()

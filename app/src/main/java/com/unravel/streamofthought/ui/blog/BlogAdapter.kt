@@ -32,9 +32,13 @@ class likes(private val store: FirebaseFirestore,private val  newLikes: Int,priv
                     val userPosts: HashMap<String, Any> = it.get(uid) as HashMap<String, Any>
                     val postDesc: HashMap<String, Any> = userPosts[i] as HashMap<String, Any>
                     postDesc["likes"] = newLikes
-                    userPosts[uid] = postDesc
+
+                    val jam: HashMap<String, Any> = hashMapOf()
+                    jam[i] = postDesc
+                    val maj: HashMap<String, Any> = hashMapOf()
+                    maj[uid] = jam
                     //Toast.makeText(context, newLikes.toString(), Toast.LENGTH_SHORT).show()
-                    //store.collection("post").document("postCollection").update(userPosts)
+                    store.collection("post").document("postCollection").update(maj)
                     done = true
                 }else
                 {
