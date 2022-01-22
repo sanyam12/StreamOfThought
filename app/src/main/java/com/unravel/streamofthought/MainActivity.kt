@@ -11,6 +11,10 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.unravel.streamofthought.databinding.ActivityMainBinding
+import android.app.UiModeManager
+
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
 
 
     }

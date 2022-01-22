@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -38,12 +39,14 @@ class BlogFragment : Fragment() {
             transaction.commit()
         }
 
+        val manager: FragmentManager = requireActivity().supportFragmentManager
+
         val recyclerView: RecyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.visibility = View.VISIBLE
         recyclerView.layoutManager = LinearLayoutManager(view.context)
         recyclerView.adapter
         val list: ArrayList<PostDB> = arrayListOf()
-        val adapter: BlogAdapter = BlogAdapter(list, view.context)
+        val adapter: BlogAdapter = BlogAdapter(list, view.context, manager)
         recyclerView.adapter = adapter
         val db = FirebaseFirestore.getInstance()
         db.collection("post").document("postCollection").get()
@@ -55,7 +58,7 @@ class BlogFragment : Fragment() {
                     for(j in post.entries)
                     {
                         val k = j.value as HashMap<String, Any>
-                        val item = PostDB(k["i"].toString(), k["displayName"].toString(), k["likes"].toString(), k["text"].toString(), k["uid"].toString())
+                        val item = PostDB(k["i"].toString(), k["displayName"].toString(), k["likes"].toString(), k["text"].toString(), k["uid"].toString(), k["title"].toString())
                         list.add(item)
                         adapter.notifyDataSetChanged()
                     }

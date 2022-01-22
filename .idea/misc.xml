@@ -22,7 +22,8 @@
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/fragment_meme.xml" value="0.1260051447094945" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.2875905797101449" />
-        <entry key="app/src/main/res/layout/item_post.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/fragment_view_blog.xml" value="0.1716485507246377" />
+        <entry key="app/src/main/res/layout/item_post.xml" value="0.375" />
         <entry key="app/src/main/res/layout/signin.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/signup.xml" value="0.2875905797101449" />
         <entry key="app/src/main/res/layout/splashscreen.xml" value="0.2953125" />

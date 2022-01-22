@@ -1,18 +1,23 @@
 package com.unravel.streamofthought.ui.blog
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.unravel.streamofthought.R
+import com.unravel.streamofthought.memeShare
 
-class BlogAdapter(private val posts: ArrayList<PostDB>, private val context: Context): RecyclerView.Adapter<BlogAdapter.PostViewHolder>() {
+class BlogAdapter(private val posts: ArrayList<PostDB>, private val context: Context, private val manager: FragmentManager): RecyclerView.Adapter<BlogAdapter.PostViewHolder>() {
     inner class PostViewHolder(view: View):RecyclerView.ViewHolder(view) {
         val displayName: TextView = view.findViewById(R.id.userName)
         val likes: TextView = view.findViewById(R.id.likeCount)
@@ -31,7 +36,17 @@ class BlogAdapter(private val posts: ArrayList<PostDB>, private val context: Con
         val curr_post = posts[position]
         holder.displayName.text = curr_post.displayName
         holder.likes.text = curr_post.likes
-        holder.title.text = curr_post.text
+        holder.title.text = curr_post.title
+        
+        holder.displayName.setOnClickListener{
+//            val transaction: FragmentTransaction = manager.beginTransaction()
+//            transaction.replace(R.id.main, ViewBlogFragment())
+//            transaction.addToBackStack("view post")
+//            transaction.commit()
+            val fragment: ViewBlogFragment = ViewBlogFragment()
+            manager.beginTransaction().replace(R.id.create_frame, fragment).commit()
+            Toast.makeText(context, "temp", Toast.LENGTH_SHORT).show()
+        }
 
         val mauth = FirebaseAuth.getInstance()
         val uid = mauth.currentUser!!.uid
