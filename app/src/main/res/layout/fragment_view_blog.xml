@@ -40,7 +40,7 @@
         android:backgroundTint="@color/white"
         android:scaleType="fitCenter"
         android:src="@drawable/share"
-        app:layout_constraintBottom_toBottomOf="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageButton10"
         app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
