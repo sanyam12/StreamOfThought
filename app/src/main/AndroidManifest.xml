@@ -17,7 +17,7 @@
         <activity
             android:name=".ui.slideshow.splashscreen"
             android:exported="true"
-            android:label="@string/app_name"
+            android:label="Barefoot_LIfe"
             android:theme="@style/splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
