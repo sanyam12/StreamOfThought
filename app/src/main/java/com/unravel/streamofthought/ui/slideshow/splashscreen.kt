@@ -20,7 +20,7 @@ class splashscreen : AppCompatActivity() {
         //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-        val a = 4000
+        val a = 2000
         if(FirebaseAuth.getInstance().currentUser==null){
             Handler().postDelayed({
                 val intent = Intent(this, SignIn ::class.java)
