@@ -17,6 +17,9 @@
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="display_name">Display Name</string>
-    <string name="save">Save</string>
     <string name="stream_of_thoughts">Stream of Thoughts</string>
+    <string name="log_out">Log Out</string>
+    <string name="save">Save</string>
+    <string name="your_email_here">Your Email here</string>
+    <string name="email">Email: -</string>
 </resources>
