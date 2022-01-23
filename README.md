@@ -16,18 +16,13 @@ helps the users to register themselves without providing any detailed instructio
 with below cool functionalities.
 
 Drop-a-line:  A basic fragment which will allow you to see everyone's post. A dialogue box with title and user name written will be displayed
-	            and one can simply open it, like it, share it and even can save to his collection. The number of likes u get will motivate you to
-	            write more.
-		     
-Drafts:       A feature made for your compostions. Sometimes we can not compose our post in a single day. Thoughts take time to compile. So this feature
-              will serve as a notepad which will save everything you write as a draft. You can edit it, delete it, post it anytime you want.
+	      and one can simply open it, like it, and share it. The number of likes u get will motivate you to write more.
 	      
 Memes:        Mark Twain says,"Make memes, Not wars". The coolest feature of this app is the memes fragment. It will help you increase your confidence 
               of survival during this never ending pandemic. You can have moments of relaxation everyday. And the main part, you can even share them with your
               family and friends.
 	      
-Profile Page: A fragment containing your display name and email id. You can write you bio and uplaod your profile picture also. Besides profile
-	       picture, your followers will be displayed. Plus an option to hide your name is also provided.
+Profile Page: A fragment containing your display name and email id. You can write you bio and uplaod your profile picture also. 
 	      
 <b> **Future Scope:** </b>
 
