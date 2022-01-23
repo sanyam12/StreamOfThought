@@ -12,11 +12,11 @@ particulars is also one of our projects's objective.
 <b> # **Project Description** </b>
 
 Barefoot_LIfe allows a soul to touch the crowd with his words and to increase positive emotions. The app with very simple and interactive interface
-helps the users to registerthemselves without providing any detailed instruction pages. The app designed with basic android concepts provides you 
+helps the users to register themselves without providing any detailed instruction pages. The app designed with basic android concepts provides you 
 with below cool functionalities.
 
 Drop-a-line:  A basic fragment which will allow you to see everyone's post. A dialogue box with title and user name written will be displayed
-	            and one can simply open it,like it,share it and even can save to his collection. The number of likes u get will motivate you to
+	            and one can simply open it, like it, share it and even can save to his collection. The number of likes u get will motivate you to
 	            write more.
 		     
 Drafts:       A feature made for your compostions. Sometimes we can not compose our post in a single day. Thoughts take time to compile. So this feature
