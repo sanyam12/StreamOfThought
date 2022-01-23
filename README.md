@@ -22,7 +22,9 @@ Memes:        Mark Twain says,"Make memes, Not wars". The coolest feature of thi
               of survival during this never ending pandemic. You can have moments of relaxation everyday. And the main part, you can even share them with your
               family and friends.
 	      
-Profile Page: A fragment containing your display name and email id. You can also uplaod your profile picture. 
+Profile Page: A fragment containing your display name and email id. You can also uplaod your profile picture.
+
+<img width="559" alt="sampleimages" src = https://github.com/sanyam12/StreamOfThought/blob/bc910f10d4ea00113a6f1f749c6c27a287af5c23/github_pic.png>
 
 <b> **Technicalaties:** </b>
 
@@ -45,7 +47,9 @@ We also want to add a feature where a peron can have his name confidential. We a
 We will also try to add a feature of save to collection which will save your memes and posts on your profile page. We also seek to have a draft fragment where one can 
 compose his post in any number of days (it will only be visible to the user), can edit it any number of times until ready to post. A comment box will also be provided below every post so that one can know the world's views on his lines. A bio in profile page will also be added to help user write about himself.
 
-	      
+<b> **APK Link:** </b>
+
+https://drive.google.com/file/d/1HKyb2eDYUgc_4PTlgHJjOJXH9dOPKDEN/view?usp=sharing
 	       
 
 
