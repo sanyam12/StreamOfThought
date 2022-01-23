@@ -27,4 +27,6 @@
     <string name="please_enter_your_bio_in_not_more_than_40_words">Please enter your bio in not more than 40 words</string>
     <string name="enter_your_bio_in_not_more_than_40_words">enter_your_bio_in_not_more_than_40_words</string>
     <string name="drafts">Drafts</string>
+    <string name="submit">Submit</string>
+    <string name="enter_your_note_here">Enter your note here</string>
 </resources>

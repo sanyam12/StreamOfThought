@@ -131,11 +131,6 @@ class ProfileFragment : Fragment() {
                 Snackbar.make(view, "No changes to save,...", Snackbar.LENGTH_SHORT)
                     .setAction("action", null).show()
         }
-
-
-
-
-
     }
 
 
