@@ -73,7 +73,13 @@ class MemeFragment : Fragment() {
             Toast.makeText(activity, i.toString(), Toast.LENGTH_SHORT).show()
             list.add(DataMeme(loadMeme(view)))
         }
-        Toast.makeText(context, list.size.toString(), Toast.LENGTH_SHORT).show() 
+        val recyclerView: RecyclerView = view.findViewById(R.id.memeRecycle)
+        recyclerView.visibility = View.VISIBLE
+        recyclerView.layoutManager = LinearLayoutManager(view.context)
+        recyclerView.adapter
+        val adapter: MemeAdapter = MemeAdapter(list, view.context)
+        recyclerView.adapter=adapter
+        adapter.notifyDataSetChanged()
 
 
 

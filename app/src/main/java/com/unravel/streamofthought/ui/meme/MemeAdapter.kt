@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
+import com.android.volley.RequestQueue
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.bumptech.glide.Glide
@@ -36,15 +37,8 @@ class MemeAdapter(private val posts: ArrayList<DataMeme>, private val context: C
         val curr: DataMeme = posts[position]
         val s: String = "Meme No: " + position.toString()
         holder.title.text = s
-
-        //Glide.with(context).load(curr.currentImageUrl).into(holder.imageHolder)
-//        holder.shareBt.setOnClickListener{
-//            val intent = Intent(Intent.ACTION_SEND)
-//            intent.type = "text/plain"
-//            intent.putExtra(Intent.EXTRA_TEXT, "Hey, check this out ${curr.currentImageUrl}")
-//            val chooser = Intent.createChooser(intent, "Share this meme using...")
-//            context.startActivity(chooser)
-//        }
+        val queue: RequestQueue = Volley.newRequestQueue(context)
+        queue.add(curr.currentImageUrl)
     }
 
     override fun getItemCount(): Int {
