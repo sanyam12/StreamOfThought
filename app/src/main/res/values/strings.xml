@@ -22,4 +22,6 @@
     <string name="save">Save</string>
     <string name="your_email_here">Your Email here</string>
     <string name="email">Email: -</string>
+    <string name="bio">Bio</string>
+    <string name="enter_your_bio_here">Enter your bio here</string>
 </resources>
