@@ -7,20 +7,6 @@
         <entry key="..\:/Users/HP/AndroidStudioProjects/StreamOfThought/app/src/main/res/layout/signup.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/StreamOfThought/app/src/main/res/layout/splashscreen.xml" value="0.10733695652173914" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/StreamOfThought/app/src/main/res/menu/bottom_nav_menu.xml" value="0.15833333333333333" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/StreamOfThought/app/src/main/res/layout/activity_main.xml" value="0.16621376811594202" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/StreamOfThought/app/src/main/res/layout/fragment_blog.xml" value="0.17255434782608695" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/StreamOfThought/app/src/main/res/layout/fragment_create_post.xml" value="0.17255434782608695" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/StreamOfThought/app/src/main/res/layout/fragment_home.xml" value="0.16621376811594202" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/StreamOfThought/app/src/main/res/layout/fragment_meme.xml" value="0.17255434782608695" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/StreamOfThought/app/src/main/res/layout/fragment_notifications.xml" value="0.16621376811594202" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/StreamOfThought/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/StreamOfThought/app/src/main/res/layout/fragment_view_blog.xml" value="0.2" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/StreamOfThought/app/src/main/res/layout/item_post.xml" value="0.16621376811594202" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/StreamOfThought/app/src/main/res/layout/meme_item.xml" value="0.16621376811594202" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/StreamOfThought/app/src/main/res/layout/signin.xml" value="0.16621376811594202" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/StreamOfThought/app/src/main/res/layout/signup.xml" value="0.16" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/StreamOfThought/app/src/main/res/layout/splashscreen.xml" value="0.16621376811594202" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/StreamOfThought/app/src/main/res/menu/bottom_nav_menu.xml" value="0.265625" />
         <entry key="..\:/Users/ysris/AndroidStudioProjects/StreamOfThoughts/app/src/main/res/layout/activity_create_post.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ysris/AndroidStudioProjects/StreamOfThoughts/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ysris/AndroidStudioProjects/StreamOfThoughts/app/src/main/res/layout/activity_meme_share.xml" value="0.16530797101449277" />
@@ -42,8 +28,9 @@
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/fragment_meme.xml" value="0.1260051447094945" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.2875905797101449" />
-        <entry key="app/src/main/res/layout/fragment_view_blog.xml" value="0.1716485507246377" />
+        <entry key="app/src/main/res/layout/fragment_view_blog.xml" value="0.5" />
         <entry key="app/src/main/res/layout/item_post.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/meme_item.xml" value="0.17753623188405798" />
         <entry key="app/src/main/res/layout/signin.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/signup.xml" value="0.2875905797101449" />
         <entry key="app/src/main/res/layout/splashscreen.xml" value="0.2953125" />
