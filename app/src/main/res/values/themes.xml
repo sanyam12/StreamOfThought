@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.StreamOfThought" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/orange</item>
-        <item name="colorPrimaryVariant">@color/orange</item>
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryVariant">#000000</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -21,8 +21,8 @@
    <style name="splash" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
        <item name="android:windowActionBar">false</item>
        <item name="android:windowNoTitle">true</item>
-       <item name="colorPrimary">@color/orange</item>
-       <item name="colorPrimaryVariant">@color/orange</item>
+       <item name="colorPrimary">#000000</item>
+       <item name="colorPrimaryVariant">#000000</item>
        <item name="colorOnPrimary">@color/white</item>
        <!-- Secondary brand color. -->
        <item name="colorSecondary">@color/teal_200</item>
@@ -39,9 +39,9 @@
     </style>
 
     <style name="fab" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="colorSecondary">@color/orange</item>
-        <item name="colorSecondaryVariant">@color/orange</item>
-        <item name="android:colorBackgroundFloating">@color/orange</item>
+        <item name="colorSecondary">#000000</item>
+        <item name="colorSecondaryVariant">#000000</item>
+        <item name="android:colorBackgroundFloating">#000000</item>
     </style>
 
 </resources>
