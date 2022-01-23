@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
@@ -25,6 +26,8 @@ class MemeAdapter(private val posts: ArrayList<DataMeme>, private val context: C
         val imageHolder: GifImageView = view.findViewById(R.id.recyclerImageView)
     }
 
+    private lateinit var currentImageUrl:String
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.meme_item, parent, false)
         val holder = PostViewHolder(view)
@@ -37,8 +40,7 @@ class MemeAdapter(private val posts: ArrayList<DataMeme>, private val context: C
         val curr: DataMeme = posts[position]
         val s: String = "Meme No: " + position.toString()
         holder.title.text = s
-        val queue: RequestQueue = Volley.newRequestQueue(context)
-        queue.add(curr.currentImageUrl)
+
     }
 
     override fun getItemCount(): Int {

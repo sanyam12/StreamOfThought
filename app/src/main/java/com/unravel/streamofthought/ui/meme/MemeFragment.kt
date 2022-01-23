@@ -26,9 +26,11 @@ import android.os.Build
 import android.os.StrictMode
 import android.os.StrictMode.ThreadPolicy
 import android.provider.ContactsContract
+import android.widget.ProgressBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.rpc.Help
 import com.unravel.streamofthought.ui.blog.BlogAdapter
 import com.unravel.streamofthought.ui.blog.PostDB
 import pl.droidsonroids.gif.GifImageView
@@ -56,65 +58,45 @@ class MemeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val queue: RequestQueue = Volley.newRequestQueue(context)
-//        queue.add(loadMeme(view))
-//
-//
-//        val shareBt: Button = view.findViewById(R.id.shareButton)
-//        shareBt.setOnClickListener{shareMeme(it)}
-//
-//        val nextBt: Button = view.findViewById(R.id.nextButton)
-//        nextBt.setOnClickListener{
-//            queue.add(loadMeme(view))
-//        }
+        queue.add(loadMeme(view))
 
-        val list: ArrayList<DataMeme> = arrayListOf()
-        for (i in 1..5)
-        {
-            Toast.makeText(activity, i.toString(), Toast.LENGTH_SHORT).show()
-            list.add(DataMeme(loadMeme(view)))
+
+        val shareBt: Button = view.findViewById(R.id.shareButton)
+        shareBt.setOnClickListener{shareMeme(it)}
+
+        val nextBt: Button = view.findViewById(R.id.nextButton)
+        nextBt.setOnClickListener{
+            queue.add(loadMeme(view))
         }
-        val recyclerView: RecyclerView = view.findViewById(R.id.memeRecycle)
-        recyclerView.visibility = View.VISIBLE
-        recyclerView.layoutManager = LinearLayoutManager(view.context)
-        recyclerView.adapter
-        val adapter: MemeAdapter = MemeAdapter(list, view.context)
-        recyclerView.adapter=adapter
-        adapter.notifyDataSetChanged()
-
-
-
-
 
 
     }
 
 
     private fun loadMeme(view: View):JsonObjectRequest {
-        // Instantiate the RequestQueue.
-       // val progressBar = view.findViewById<ProgressBar>(R.id.progressBar)
-        //progressBar.visibility = View.VISIBLE
+        val progressBar = view.findViewById<ProgressBar>(R.id.progressBar)
+        progressBar.visibility = View.VISIBLE
         val queue:RequestQueue = Volley.newRequestQueue(context)
         val ImageUrl = "https://meme-api.herokuapp.com/gimme"
 
 
-        // Request a string response from the provided URL.
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, ImageUrl, null,
             { response ->
                 currentImageUrl = response.getString("url")
-                //list.add(DataMeme(currentImageUrl))
                 val memeImage = view.findViewById<ImageView>(R.id.memeImage)
                 activity?.let {
-                    //Glide.with(it).load(currentImageUrl).into(memeImage)
+                    Glide.with(it).load(currentImageUrl).into(memeImage)
+
                 }
                 //Toast.makeText(activity, currentImageUrl, Toast.LENGTH_SHORT).show()
-
+                progressBar.visibility = View.GONE
             },
             {
                 Toast.makeText(activity, "Something went wrong", Toast.LENGTH_LONG).show()
             })
         // Add the request to the RequestQueue.
-        //queue.add(jsonObjectRequest)
+        queue.add(jsonObjectRequest)
         return jsonObjectRequest
         //Toast.makeText(activity,jsonObjectRequest.body, Toast.LENGTH_SHORT).show()
     }
