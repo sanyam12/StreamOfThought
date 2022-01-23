@@ -24,7 +24,7 @@ Memes:        Mark Twain says,"Make memes, Not wars". The coolest feature of thi
 	      
 Profile Page: A fragment containing your display name and email id. You can also uplaod your profile picture.
 
-https://github.com/sanyam12/StreamOfThought/blob/bc910f10d4ea00113a6f1f749c6c27a287af5c23/github_pic.png
+<img width="559" alt="sampleimages" src = https://github.com/sanyam12/StreamOfThought/blob/bc910f10d4ea00113a6f1f749c6c27a287af5c23/github_pic.png>
 
 <b> **Technicalaties:** </b>
 
