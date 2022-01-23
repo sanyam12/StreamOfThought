@@ -5,57 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/whitebackground"
-    tools:context=".ui.blog.ViewBlogFragment"
-    android:paddingBottom="55dp">
-
-
-<!--    <ImageButton-->
-<!--        android:id="@+id/imageButton9"-->
-<!--        android:layout_width="38dp"-->
-<!--        android:layout_height="38dp"-->
-<!--        android:background="@drawable/round_oval"-->
-<!--        android:scaleType="fitCenter"-->
-<!--        android:src="@drawable/share"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/imageButton2"-->
-<!--        app:layout_constraintHorizontal_bias="0.042"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/imageButton"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textView9"-->
-<!--        app:layout_constraintVertical_bias="0.25" />-->
-
-<!--    <ImageButton-->
-<!--        android:id="@+id/imageButton"-->
-<!--        android:layout_width="38dp"-->
-<!--        android:layout_height="38dp"-->
-<!--        android:background="@drawable/round_oval"-->
-<!--        android:scaleType="fitCenter"-->
-<!--        android:src="@drawable/like"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.045"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textView9"-->
-<!--        app:layout_constraintVertical_bias="0.25" />-->
-
-<!--    <ImageButton-->
-<!--        android:id="@+id/imageButton2"-->
-<!--        android:layout_width="38dp"-->
-<!--        android:layout_height="38dp"-->
-<!--        android:background="@drawable/round_oval"-->
-<!--        android:scaleType="fitCenter"-->
-<!--        android:src="@drawable/img"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.865"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/imageButton"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textView9"-->
-<!--        app:layout_constraintVertical_bias="0.25" />-->
+    tools:context=".ui.blog.ViewBlogFragment">
 
 
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="389dp"
-        android:layout_height="665dp"
+        android:layout_height="wrap_content"
         android:fillViewport="true"
         app:flow_verticalBias="0.90"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -63,60 +19,98 @@
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.96">
+        app:layout_constraintVertical_bias="0.29000002">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-<!--            <androidx.cardview.widget.CardView-->
-<!--                android:layout_width="362dp"-->
-<!--                android:layout_height="41dp"-->
-<!--                android:layout_marginTop="24dp"-->
-<!--                android:backgroundTint="@color/grey"-->
-<!--                app:cardCornerRadius="20dp"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintHorizontal_bias="0.51"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent">-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/grey"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.51"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-<!--                <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:background="@color/grey">-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/grey">
 
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/textView10"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="0dp"-->
-<!--                        android:paddingStart="20dp"-->
-<!--                        android:paddingTop="10dp"-->
-<!--                        android:text="Title Here"-->
-<!--                        android:textColor="@color/black"-->
-<!--                        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                        app:layout_constraintEnd_toEndOf="parent"-->
-<!--                        app:layout_constraintStart_toStartOf="parent"-->
-<!--                        app:layout_constraintTop_toTopOf="parent" />-->
-<!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
-<!--            </androidx.cardview.widget.CardView>-->
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:paddingStart="20dp"
+                        android:paddingTop="10dp"
+                        android:text="Title Here"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.546" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
     </ScrollView>
 
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="50dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="628dp"
+        android:background="@drawable/round_oval"
+        android:scaleType="fitCenter"
+        android:src="@drawable/like"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="44dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="628dp"
+        android:background="@drawable/round_oval"
+        android:scaleType="fitCenter"
+        android:src="@drawable/share"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="44dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="628dp"
+        android:background="@drawable/round_oval"
+        android:scaleType="fitCenter"
+        android:src="@drawable/img"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
