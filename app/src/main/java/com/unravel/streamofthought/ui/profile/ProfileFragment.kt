@@ -91,22 +91,6 @@ class ProfileFragment : Fragment() {
                 }
         }
 
-        val switch: Switch = view.findViewById(R.id.switch1)
-        switch.setOnClickListener {
-            if (switch.isChecked) {
-                val map: Map<String, String> = mapOf("anon" to "true")
-
-                store.collection("desc").document(uid)
-                    .update(map)
-                Toast.makeText(activity, "updated", Toast.LENGTH_SHORT).show()
-            } else {
-                val map: Map<String, String> = mapOf("anon" to "false")
-
-                store.collection("desc").document(uid)
-                    .update(map)
-                Toast.makeText(activity, "updated to false", Toast.LENGTH_SHORT).show()
-            }
-        }
 
         val logOut: Button = view.findViewById(R.id.button2)
         logOut.setOnClickListener {
