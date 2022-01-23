@@ -1,5 +1,5 @@
 # StreamOfThought
-# barefoot_LIfe, the fewer burdens and restrictions you have in life, the freer you are
+# Barefoot_LIfe, the fewer burdens and restrictions you have in life, the freer you are
 <b> **Project Goal:** </b>
 
 The main goal of our project was to make an app for every person who wants to write something. He need not to be a writer. Poems, Sonnets,
