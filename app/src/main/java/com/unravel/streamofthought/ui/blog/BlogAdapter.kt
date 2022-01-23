@@ -49,7 +49,8 @@ class likes(private val store: FirebaseFirestore,private val  newLikes: Int,priv
     }
 }
 
-class BlogAdapter(private val posts: ArrayList<PostDB>, private val context: Context, private val manager: FragmentManager): RecyclerView.Adapter<BlogAdapter.PostViewHolder>() {
+class BlogAdapter(private val posts: ArrayList<PostDB>, private val context: Context, private val manager: FragmentManager,
+                    private val viewa: View): RecyclerView.Adapter<BlogAdapter.PostViewHolder>() {
     inner class PostViewHolder(view: View):RecyclerView.ViewHolder(view) {
         val displayName: TextView = view.findViewById(R.id.userName)
         val likes: TextView = view.findViewById(R.id.likeCount)
@@ -84,6 +85,8 @@ class BlogAdapter(private val posts: ArrayList<PostDB>, private val context: Con
             bundle.putString("uid", curr_post.uid)
             val fragment = ViewBlogFragment()
             fragment.setArguments(bundle)
+            val fab: FloatingActionButton = viewa.findViewById(R.id.fab)
+            fab.visibility = View.GONE
             manager.beginTransaction().replace(R.id.blogF, fragment).commit()
             //Toast.makeText(context, "temp", Toast.LENGTH_SHORT).show()
         }

@@ -42,7 +42,7 @@ class BlogFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(view.context)
         recyclerView.adapter
         val list: ArrayList<PostDB> = arrayListOf()
-        val adapter: BlogAdapter = BlogAdapter(list, view.context, manager)
+        val adapter: BlogAdapter = BlogAdapter(list, view.context, manager, view)
         recyclerView.adapter = adapter
         val db = FirebaseFirestore.getInstance()
         db.collection("post").document("postCollection").get()

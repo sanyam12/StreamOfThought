@@ -30,12 +30,14 @@ class CreatePostFragment : Fragment() {
         val mauth = FirebaseAuth.getInstance()
         val store = FirebaseFirestore.getInstance()
         val postText: EditText = view.findViewById(R.id.postInput)
+        val titleEdit: EditText = view.findViewById(R.id.editTextTextPersonName4)
         val postBt: Button = view.findViewById(R.id.postButton)
         postBt.setOnClickListener{
             val s: String = postText.text.toString()
+            val p: String = titleEdit.text.toString()
             val uid = mauth.currentUser!!.uid
-            if(s.isEmpty())
-                Toast.makeText(activity, "Post cannot be Empty", Toast.LENGTH_SHORT).show()
+            if(s.isEmpty() || p.isEmpty())
+                Toast.makeText(activity, "Post and Title cannot be Empty", Toast.LENGTH_SHORT).show()
             else
             {
                 store.collection("desc").document(uid).get()
@@ -53,7 +55,6 @@ class CreatePostFragment : Fragment() {
                                         {
                                             rest= it.get(uid) as HashMap<String, Any>
                                         }
-                                        val titleEdit: EditText = view.findViewById(R.id.editTextTextPersonName4)
                                         val likes = 0
                                         val map = HashMap<String, Any>()
                                         map["likes"] = likes

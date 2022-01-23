@@ -24,6 +24,11 @@ class ViewBlogFragment : Fragment() {
         val tv:TextView = view.findViewById(R.id.textView9)
         tv.text = text
 
+
+        val title: String = requireArguments().getString("title")!!
+        val titleTv: TextView = view.findViewById(R.id.textView10)
+        titleTv.text = title
+
     }
 
 }
