@@ -34,7 +34,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:src="@drawable/user" />
+                tools:src="@drawable/img_2" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -50,7 +50,7 @@
         android:layout_marginTop="136dp"
         android:background="@null"
         android:scaleType="fitCenter"
-        android:src="@drawable/pencil"
+        android:src="@drawable/img_3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.32"
         app:layout_constraintStart_toStartOf="parent"
