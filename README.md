@@ -22,14 +22,28 @@ Memes:        Mark Twain says,"Make memes, Not wars". The coolest feature of thi
               of survival during this never ending pandemic. You can have moments of relaxation everyday. And the main part, you can even share them with your
               family and friends.
 	      
-Profile Page: A fragment containing your display name and email id. You can write you bio and uplaod your profile picture also. 
-	      
+Profile Page: A fragment containing your display name and email id. You can also uplaod your profile picture. 
+
+<b> **Technicalaties:** </b>
+
+The following technicalaties are used to make fragments of this app:
+
+Profile Page: Firebase Firestore, Firebase Authentication, Firebase crashlytics
+
+Splash Screen: Post Delayed handler, Lottie animations
+
+Sign Up/ Sign in: Firebase login, Lottie animations
+
+Memes: Volley library, API calls, Glide library, JsonObjectRequest
+
+Drop-a-line: Recycler view, Firebase Firestore, Fragment, Scroll view, Card view, lottie animations
+
 <b> **Future Scope:** </b>
 
 We aim to add a number of more features like search box where you can find other users and follow them. The followers of a user will be shown in side of profile pic.
 We also want to add a feature where a peron can have his name confidential. We also seek to add recycler view in memes section so that one can view once viewed memes also.
 We will also try to add a feature of save to collection which will save your memes and posts on your profile page. We also seek to have a draft fragment where one can 
-compose his post in any number of days (it will only be visible to the user), can edit it any number of times until ready to post. A comment box will also be provided below every post so that one can know the world's views on his lines.
+compose his post in any number of days (it will only be visible to the user), can edit it any number of times until ready to post. A comment box will also be provided below every post so that one can know the world's views on his lines. A bio in profile page will also be added to help user write about himself.
 
 	      
 	       
