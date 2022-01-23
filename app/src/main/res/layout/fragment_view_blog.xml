@@ -24,7 +24,7 @@
         android:id="@+id/imageButton9"
         android:layout_width="38dp"
         android:layout_height="43dp"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="96dp"
         android:layout_marginBottom="56dp"
         android:background="@drawable/round_oval"
         android:scaleType="fitCenter"
@@ -48,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="0.613" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:id="@+id/imageButton2"
