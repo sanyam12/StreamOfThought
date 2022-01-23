@@ -9,7 +9,7 @@ world. One can also showcase his talent of writing on this app. Sometimes the li
 serve as an escape from reality (which we think everyone gonna need sooner or later). Awaring the human community about the recent global 
 particulars is also one of our projects's objective.
 
-<b> # **Project Description** </b>
+<b> # **Project Description:** </b>
 
 Barefoot_LIfe allows a soul to touch the crowd with his words and to increase positive emotions. The app with very simple and interactive interface
 helps the users to register themselves without providing any detailed instruction pages. The app designed with basic android concepts provides you 
