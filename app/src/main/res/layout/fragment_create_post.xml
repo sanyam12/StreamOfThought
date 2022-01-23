@@ -5,8 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.blog.CreatePostFragment"
-    android:background="@drawable/images"
-    android:paddingBottom="55dp">
+    android:paddingBottom="55dp"
+    android:background="@drawable/greybackground">
 
 
     <EditText

@@ -23,7 +23,7 @@ class MemeAdapter(private val posts: ArrayList<DataMeme>, private val context: C
     inner class PostViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val title: TextView = view.findViewById(R.id.userName)
         val shareBt: ImageButton = view.findViewById(R.id.imageButton4)
-        val imageHolder: GifImageView = view.findViewById(R.id.recyclerImageView)
+//        val imageHolder: GifImageView = view.findViewById(R.id.recyclerImageView)
     }
 
     private lateinit var currentImageUrl:String

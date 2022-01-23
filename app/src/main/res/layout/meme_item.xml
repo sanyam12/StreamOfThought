@@ -6,7 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="5dp"
     app:cardCornerRadius="20dp"
-    android:elevation="22dp">
+    android:elevation="22dp"
+    android:background="@drawable/greybackground">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -42,14 +43,6 @@
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/share" />
 
-        <pl.droidsonroids.gif.GifImageView
-            android:id="@+id/recyclerImageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/userName"
-            tools:srcCompat="@drawable/back" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
