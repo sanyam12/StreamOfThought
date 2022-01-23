@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.meme.MemeFragment"
-    android:background="@color/white"
-    android:paddingBottom="55dp">
+    android:paddingBottom="55dp"
+    android:background="@drawable/greybackground">
 
     <ImageView
         android:id="@+id/memeImage"

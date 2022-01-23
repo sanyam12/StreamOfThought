@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:id="@+id/blogF"
     tools:context=".ui.blog.BlogFragment"
-    android:background="@color/white"
-    android:paddingBottom="55dp">
+    android:paddingBottom="55dp"
+    android:background="@drawable/greybackground">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
