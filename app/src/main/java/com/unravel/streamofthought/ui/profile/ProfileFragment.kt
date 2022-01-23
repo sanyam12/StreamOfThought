@@ -67,7 +67,7 @@ class ProfileFragment : Fragment() {
             val bitmap = BitmapFactory.decodeByteArray(it,0,it.size)
             dp.setImageBitmap(bitmap)
         }.addOnFailureListener{
-            dp.setImageResource(R.drawable.user)
+            dp.setImageResource(R.drawable.profilenew)
         }
 
         val bio: TextView = view.findViewById(R.id.enterBio)
