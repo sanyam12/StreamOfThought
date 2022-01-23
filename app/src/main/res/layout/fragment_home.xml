@@ -8,5 +8,4 @@
     tools:context=".ui.home.HomeFragment">
 
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

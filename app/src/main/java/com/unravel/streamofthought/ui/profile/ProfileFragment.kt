@@ -10,6 +10,7 @@ import com.unravel.streamofthought.R
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Context
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.view.ContextThemeWrapper
 import android.widget.*
@@ -58,9 +59,18 @@ class ProfileFragment : Fragment() {
 
         val store: FirebaseFirestore = FirebaseFirestore.getInstance()
         val mauth: FirebaseAuth = FirebaseAuth.getInstance()
-        val dp_location = mauth.currentUser?.uid
-        val url = "images/$dp_location/profile_pic"
+        val dpLocation = mauth.currentUser?.uid
+        val url = "images/$dpLocation/profile_pic"
         val max_bytes:Long = 1024*1024
+        val imgRef = storageReference.child(url)
+        imgRef.getBytes(max_bytes).addOnSuccessListener {
+            val bitmap = BitmapFactory.decodeByteArray(it,0,it.size)
+            dp.setImageBitmap(bitmap)
+        }.addOnFailureListener{
+            dp.setImageResource(R.drawable.user)
+        }
+
+
         val uid = mauth.currentUser!!.uid.toString()
         if (mauth.currentUser != null) {
             store.collection("desc").document(uid).get()
@@ -100,30 +110,10 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
 
-        fun UploadImage() {
 
-            if (imageUri != null) {
-                val id = FirebaseAuth.getInstance().currentUser?.uid
-                val ref: StorageReference =
-                    FirebaseStorage.getInstance().getReference("images/$id/profile_pic")
-                ref.putFile(imageUri)
-                    .addOnSuccessListener {
-                        Toast.makeText(activity, "Profile photo changed", Toast.LENGTH_SHORT).show()
-
-                    }
-                    .addOnFailureListener {
-                        OnFailureListener() {
-                            Toast.makeText(
-                                activity,
-                                "Upload Failed ${it.toString()}",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                    }
-                    .addOnProgressListener {
-                        Toast.makeText(activity, "working on it", Toast.LENGTH_LONG).show()
-                    }
-            }
+        val myButton: View = view.findViewById(R.id.imageButton3)
+        myButton.setOnClickListener {
+            SelectImage()
         }
 
         val save: Button = view.findViewById(R.id.button3)
@@ -137,10 +127,6 @@ class ProfileFragment : Fragment() {
 
 
 
-        val myButton: View = view.findViewById(R.id.imageButton3)
-        myButton.setOnClickListener {
-            SelectImage()
-        }
 
 
     }
@@ -161,6 +147,27 @@ class ProfileFragment : Fragment() {
 
         }
 
+    }
+
+   private fun UploadImage() {
+
+        if (imageUri != null) {
+            val id = FirebaseAuth.getInstance().currentUser?.uid
+            val ref: StorageReference = FirebaseStorage.getInstance().getReference("images/$id/profile_pic")
+            ref.putFile(imageUri)
+                .addOnSuccessListener {
+                    Toast.makeText(activity, "Profile photo changed", Toast.LENGTH_SHORT).show()
+
+                }
+                .addOnFailureListener {
+                    OnFailureListener() {
+                        Toast.makeText(activity, "Upload Failed ${it.toString()}", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                .addOnProgressListener {
+                    Toast.makeText(activity, "working on it", Toast.LENGTH_LONG).show()
+                }
+        }
     }
 
     override fun onDestroy() {
