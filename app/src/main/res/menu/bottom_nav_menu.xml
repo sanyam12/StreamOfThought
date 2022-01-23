@@ -22,7 +22,7 @@
     <item
         android:id="@+id/blogFragment"
         android:icon="@drawable/write"
-        android:title="Blog"/>
+        android:title="Drop-a-line"/>
     <item
         android:id="@+id/profileFragment"
         android:icon="@drawable/profilenew"
