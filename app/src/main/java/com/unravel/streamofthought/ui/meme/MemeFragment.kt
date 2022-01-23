@@ -15,7 +15,6 @@ import android.graphics.Bitmap
 import com.android.volley.*
 import com.android.volley.toolbox.*
 import android.graphics.BitmapFactory
-import android.widget.ImageView
 import java.io.IOException
 import java.io.InputStream
 import java.net.HttpURLConnection
