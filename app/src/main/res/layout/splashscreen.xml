@@ -29,6 +29,7 @@
         android:textAlignment="center"
         android:textColor="#FF7F50"
         android:textSize="33dp"
+        android:gravity="center"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/test_anim"
         app:layout_constraintEnd_toEndOf="parent"

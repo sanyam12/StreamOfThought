@@ -1,5 +1,6 @@
 package com.unravel.streamofthought.ui.meme
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -15,6 +16,7 @@ import android.graphics.Bitmap
 import com.android.volley.*
 import com.android.volley.toolbox.*
 import android.graphics.BitmapFactory
+import android.icu.text.RelativeDateTimeFormatter
 import android.widget.ImageView
 import java.io.IOException
 import java.io.InputStream
@@ -23,14 +25,20 @@ import java.net.URL
 import android.os.Build
 import android.os.StrictMode
 import android.os.StrictMode.ThreadPolicy
+import android.provider.ContactsContract
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.unravel.streamofthought.ui.blog.BlogAdapter
+import com.unravel.streamofthought.ui.blog.PostDB
 import pl.droidsonroids.gif.GifImageView
 
 class MemeFragment : Fragment() {
     private lateinit var memeFragmentViewModel: MemeFragmentViewModel
     private var _binding: FragmentMemeBinding? = null
     private val binding get() = _binding!!
-    private var currentImageUrl: String? = null
+    private lateinit var currentImageUrl: String
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,20 +55,39 @@ class MemeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loadMeme(view)
+        val queue: RequestQueue = Volley.newRequestQueue(context)
+//        queue.add(loadMeme(view))
+//
+//
+//        val shareBt: Button = view.findViewById(R.id.shareButton)
+//        shareBt.setOnClickListener{shareMeme(it)}
+//
+//        val nextBt: Button = view.findViewById(R.id.nextButton)
+//        nextBt.setOnClickListener{
+//            queue.add(loadMeme(view))
+//        }
 
-        val shareBt: Button = view.findViewById(R.id.shareButton)
-        shareBt.setOnClickListener{shareMeme(it)}
+        val list: ArrayList<DataMeme> = arrayListOf()
+        for (i in 1..5)
+        {
+            Toast.makeText(activity, i.toString(), Toast.LENGTH_SHORT).show()
+            list.add(DataMeme(loadMeme(view)))
+        }
+        Toast.makeText(context, list.size.toString(), Toast.LENGTH_SHORT).show() 
 
-        val nextBt: Button = view.findViewById(R.id.nextButton)
-        nextBt.setOnClickListener{ loadMeme(view) }
+
+
+
+
+
     }
 
-    private fun loadMeme(view: View) {
+
+    private fun loadMeme(view: View):JsonObjectRequest {
         // Instantiate the RequestQueue.
        // val progressBar = view.findViewById<ProgressBar>(R.id.progressBar)
         //progressBar.visibility = View.VISIBLE
-        val queue = Volley.newRequestQueue(activity)
+        val queue:RequestQueue = Volley.newRequestQueue(context)
         val ImageUrl = "https://meme-api.herokuapp.com/gimme"
 
 
@@ -69,16 +96,21 @@ class MemeFragment : Fragment() {
             Request.Method.GET, ImageUrl, null,
             { response ->
                 currentImageUrl = response.getString("url")
-                val memeImage = view.findViewById<GifImageView>(R.id.gifmeme)
+                //list.add(DataMeme(currentImageUrl))
+                val memeImage = view.findViewById<ImageView>(R.id.memeImage)
                 activity?.let {
-                    Glide.with(it).load(currentImageUrl).into(memeImage)
+                    //Glide.with(it).load(currentImageUrl).into(memeImage)
                 }
+                //Toast.makeText(activity, currentImageUrl, Toast.LENGTH_SHORT).show()
+
             },
             {
                 Toast.makeText(activity, "Something went wrong", Toast.LENGTH_LONG).show()
             })
         // Add the request to the RequestQueue.
-        queue.add(jsonObjectRequest)
+        //queue.add(jsonObjectRequest)
+        return jsonObjectRequest
+        //Toast.makeText(activity,jsonObjectRequest.body, Toast.LENGTH_SHORT).show()
     }
 
     private fun shareMeme(view: View) {

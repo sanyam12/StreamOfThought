@@ -1,3 +1,5 @@
 package com.unravel.streamofthought.ui.meme
 
-data class DataMeme(val currentImageUrl: String)
+import com.android.volley.toolbox.JsonObjectRequest
+
+data class DataMeme(val currentImageUrl: JsonObjectRequest)

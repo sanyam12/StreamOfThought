@@ -5,27 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.meme.MemeFragment"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:paddingBottom="55dp">
 
-<!--    <ImageView-->
-<!--        android:id="@+id/memeImage"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="84dp"-->
-<!--        android:layout_marginBottom="77dp"-->
-<!--        android:src="@drawable/background"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/shareButton"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gifmeme"
+    <ImageView
+        android:id="@+id/memeImage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:layout_marginBottom="77dp"
+        android:src="@drawable/background"
         app:layout_constraintBottom_toTopOf="@+id/shareButton"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+<!--    <pl.droidsonroids.gif.GifImageView-->
+<!--        android:id="@+id/gifmeme"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/shareButton"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <Button
         android:id="@+id/shareButton"
@@ -48,4 +49,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toEndOf="@+id/shareButton" />
+
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/memeRecycle"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginHorizontal="5dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="186dp"-->
+<!--        android:layout_height="159dp"-->
+<!--        android:src="@drawable/home"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/button4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Button"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imageView" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

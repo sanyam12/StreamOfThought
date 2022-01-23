@@ -61,10 +61,6 @@ class BlogFragment : Fragment() {
                 }
             }
 
-        val refersh: FloatingActionButton = view.findViewById(R.id.floatingActionButton)
-        refersh.setOnClickListener{
-            adapter.notifyDataSetChanged()
-        }
 
 
 

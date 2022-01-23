@@ -42,14 +42,14 @@
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/share" />
 
-        <ImageView
-            android:id="@+id/imageView"
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/recyclerImageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/userName"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@drawable/back" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
