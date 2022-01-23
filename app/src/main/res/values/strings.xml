@@ -24,4 +24,5 @@
     <string name="email">Email: -</string>
     <string name="bio">Bio</string>
     <string name="enter_your_bio_here">Enter your bio here</string>
+    <string name="please_enter_your_bio_in_not_more_than_40_words">Please enter your bio in not more than 40 words</string>
 </resources>
