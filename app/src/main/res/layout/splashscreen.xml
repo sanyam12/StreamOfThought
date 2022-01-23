@@ -26,7 +26,7 @@
         android:layout_height="109dp"
         android:fontFamily="@font/segoepr"
         android:gravity="center"
-        android:text="Write and touch the crowd"
+        android:text="Write and Touch the Crowd"
         android:textAlignment="center"
         android:textColor="#FF7F50"
         android:textSize="33dp"

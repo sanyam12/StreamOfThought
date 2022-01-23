@@ -70,6 +70,13 @@ class ProfileFragment : Fragment() {
             dp.setImageResource(R.drawable.user)
         }
 
+        val bio: TextView = view.findViewById(R.id.enterBio)
+        val db = FirebaseFirestore.getInstance()
+        db.collection("desc").document(mauth.uid.toString()).get().addOnSuccessListener {
+            var display = it.get("bio").toString()
+                bio.text = display
+        }
+
 
         val uid = mauth.currentUser!!.uid.toString()
         if (mauth.currentUser != null) {

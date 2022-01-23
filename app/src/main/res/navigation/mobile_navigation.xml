@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.unravel.streamofthought.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:label="Drafts"
         tools:layout="@layout/fragment_home" />
 
     <fragment
@@ -35,7 +35,7 @@
     <fragment
         android:id="@+id/blogFragment"
         android:name="com.unravel.streamofthought.ui.blog.BlogFragment"
-        android:label="Blog"
+        android:label="Drop-a-line"
         tools:layout="@layout/fragment_blog" >
         <action
             android:id="@+id/action_blogFragment_to_createPostFragment"
