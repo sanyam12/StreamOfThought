@@ -96,14 +96,15 @@
         android:id="@+id/imageButton9"
         android:layout_width="44dp"
         android:layout_height="43dp"
-        android:layout_marginTop="640dp"
         android:background="@drawable/round_oval"
         android:scaleType="fitCenter"
         android:src="@drawable/share"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintHorizontal_bias="0.198"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.912" />
 
     <TextView
         android:id="@+id/textView11"
