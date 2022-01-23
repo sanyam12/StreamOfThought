@@ -1,6 +1,7 @@
 package com.unravel.streamofthought.ui.blog
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -62,7 +63,7 @@ class ViewBlogFragment : Fragment() {
         val title: String = requireArguments().getString("title")!!
         val titleTv: TextView = view.findViewById(R.id.textView10)
         titleTv.text = title
-
+        val username: String = requireArguments().getString("displayName")!!
         val likeBt: ImageButton = view.findViewById(R.id.imageButton)
         val likesNo: TextView = view.findViewById(R.id.textView11)
         val auth = FirebaseAuth.getInstance()
@@ -136,6 +137,14 @@ class ViewBlogFragment : Fragment() {
                 }
         }
 
+        val shareBt: ImageButton = view.findViewById(R.id.imageButton9)
+        shareBt.setOnClickListener{
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.type = "text/plain"
+            intent.putExtra(Intent.EXTRA_TEXT, "Hey, check this Post on *Barefoot_LIfe* by *$username*\n\n" + title + "\n\n$text")
+            val chooser = Intent.createChooser(intent, "Share this meme using...")
+            startActivity(chooser)
+        }
 
     }
 
