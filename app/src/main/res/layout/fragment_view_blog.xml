@@ -79,18 +79,18 @@
         </LinearLayout>
     </ScrollView>
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="44dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="628dp"
-        android:background="@drawable/round_oval"
-        android:scaleType="fitCenter"
-        android:src="@drawable/like"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/imageButton"-->
+<!--        android:layout_width="44dp"-->
+<!--        android:layout_height="43dp"-->
+<!--        android:layout_marginTop="628dp"-->
+<!--        android:background="@drawable/round_oval"-->
+<!--        android:scaleType="fitCenter"-->
+<!--        android:src="@drawable/like"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.043"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <ImageButton
         android:id="@+id/imageButton9"
@@ -102,23 +102,24 @@
         android:src="@drawable/share"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageButton" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="40dp"
-        android:layout_height="15dp"
-        android:gravity="center"
-        android:text="0"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="@+id/imageButton"
-        app:layout_constraintVertical_bias="0.428" />
+    <!--    <TextView-->
+<!--        android:id="@+id/textView11"-->
+<!--        android:layout_width="40dp"-->
+<!--        android:layout_height="15dp"-->
+<!--        android:gravity="center"-->
+<!--        android:text="0"-->
+<!--        android:textColor="@color/black"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/imageButton"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/imageButton"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/imageButton"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/imageButton"-->
+<!--        app:layout_constraintVertical_bias="0.428" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
