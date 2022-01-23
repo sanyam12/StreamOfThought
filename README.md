@@ -22,7 +22,9 @@ Memes:        Mark Twain says,"Make memes, Not wars". The coolest feature of thi
               of survival during this never ending pandemic. You can have moments of relaxation everyday. And the main part, you can even share them with your
               family and friends.
 	      
-Profile Page: A fragment containing your display name and email id. You can also uplaod your profile picture. 
+Profile Page: A fragment containing your display name and email id. You can also uplaod your profile picture.
+
+https://github.com/sanyam12/StreamOfThought/blob/bc910f10d4ea00113a6f1f749c6c27a287af5c23/github_pic.png
 
 <b> **Technicalaties:** </b>
 
